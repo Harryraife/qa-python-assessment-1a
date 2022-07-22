@@ -34,8 +34,19 @@
 # What was the name of the function we have seen to check the length of a container?  Use your CLI to access the Python documentation and get help(len).
 
 
+from xmlrpc.client import boolean
+
+
 def one(input1, input2):
-    return ""
+    if len(input1)>len(input2):
+        return input1
+    elif len(input1)<len(input2):
+        return input2
+    elif len(input1) == len(input2):
+        return input1 + " " + input2
+    else: 
+        pass
+
 
    # <QUESTION 2>
 
@@ -61,7 +72,16 @@ def one(input1, input2):
 
 
 def two(input):
-    return ""
+    lower = input.lower()
+    if lower.count("bert") != 2:
+        return ""
+    else:
+        rangestart = lower.find("bert")
+        end = lower[rangestart+4:]
+        rangefinish = end.find("bert")
+        output = end[:rangefinish]
+        
+    return output
 
 
     # <QUESTION 3>
@@ -85,7 +105,14 @@ def two(input):
 
 
 def three(arg1):
-    return ""
+    if arg1 % 3 == 0 and arg1 % 5 == 0:
+        return "fizzbuzz"
+    elif arg1 % 5 ==0:
+        return "buzz"
+    elif arg1 % 3 == 0:
+        return "fizz"
+    else:
+        return "null"
 
     # <QUESTION 4>
 
@@ -111,6 +138,8 @@ def three(arg1):
 
 
 def four(arg1):
+#come back to this one
+
     return ""
 
     # <QUESTION 5>
@@ -140,7 +169,14 @@ def four(arg1):
 
 
 def five(input):
-    return ""
+    fulllist = input.split(",")
+    for i in len(fulllist):
+        if bool in fullist(i):
+            names = fulllist(i-2)
+            return names
+        else:
+            pass
+    return names
 
     # <QUESTION 6>
 
@@ -161,7 +197,17 @@ def five(input):
 
 
 def six(input):
-    return ""
+    if input.find("ie")>0 and input.find("ie") == input.find("c") +1:
+        return False
+    elif input.find("ie")>0 and input.find("ie") != input.find("c") +1:
+        return True
+    elif input.find("ei")>0 and input.find("ei") == input.find("c") +1:
+        return True
+    elif input.find("ei")>0 and input.find("ei") != input.find("c")+1:
+        return False
+    else:
+        return True
+    
 
     # <QUESTION 7>
 
@@ -177,9 +223,13 @@ def six(input):
 
     # How do we ignore case in a String? help(str) may offer some insight.
 
-
+import re
 def seven(input):
-    return ""
+    vowels = 'aeiou'
+    str_list = re.findall(f'[{vowels}]', input, re.I)
+    count = len(str_list)
+    
+    return count
 
     # <QUESTION 8>
 
@@ -196,9 +246,13 @@ def seven(input):
 
     # You may need to create a list of numbers from 0 to i, take a look at help(range).
 
-
+import math
 def eight(input):
-    return ""
+    if input>0 or input<11:
+        output = math.fractorial(input)            
+        return output
+    else:
+        pass 
 
     # <QUESTION 9>
 
@@ -220,7 +274,12 @@ def eight(input):
 
 
 def nine(inputString, char):
-    return ""
+    if inputString.find(char)>0:
+        strip = inputString.replace(" ","")
+        output = strip.find(char)
+        return output + 1 
+    elif inputString.find(char)<0:
+        return -1
 
     # <QUESTION 10>
 
